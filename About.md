@@ -14,16 +14,16 @@ This is an all in one documents storing and sharing platfrom specially build for
 
 - Store all events and any updates of your pregnancy time!
 - Attach PDF's, images with every event and update.
-- Filter and esily find documents in a bunch of documents.
+- Filter and easily find documents in a bunch of documents.
 - Make mom's profile which includes only the important data required during pregancy.
 - Share events, updates and documents with a single click.
 - Share your profile with all public documents with doctor or your loved ones in a few clicks.
 - Prevent your private documents from accident sharing just by a single click.
-- Take your privacy to next level by expireable profile links which you can build in just a few clicks.
+- Take your privacy to next level by expirable profile links which you can build in just a few clicks.
 
  ## Inspiration of building this project.
  
-During the time of pregnany moms need to take care of her and also a lot of documents like - prescriptions, reports and they also need to remember a lot of things like medicine updates, allergies (they might have), things what to do and what not do. And it becomes a lot hectic. 
+During the time of pregnancy moms need to take care of her and also a lot of documents like - prescriptions, reports and they also need to remember a lot of things like medicine updates, allergies (they might have), things what to do and what not do. And it becomes a lot hectic. 
 
 Also for every doctor visit they need to take a lot of previous reports, prescriptions and all other stuff. And there is no easy way of sharing them with doctor.
 
