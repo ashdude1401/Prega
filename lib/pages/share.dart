@@ -24,12 +24,11 @@ class _ShareState extends State<Share> {
   );
 
   Future<http.Response> getLink() async {
+    String url =
+        "https://us-central1-test-project-019.cloudfunctions.net/makeExpiryCopy";
     return await http.post(
-      Uri.parse(
-          'https://us-central1-test-project-019.cloudfunctions.net/makeExpiryCopy'),
-      headers: {
-        'Content-Type': 'application/json; charset=UTF-8',
-      },
+      Uri.parse(url),
+      headers: {'Content-Type': 'application/json; charset=UTF-8'},
       body: jsonEncode({'uid': user.uid, 'ttl': actualTime}),
     );
   }
@@ -57,24 +56,21 @@ class _ShareState extends State<Share> {
                   width: 15,
                 ),
                 const Text(
-                  "Share",
+                  "Share your Health",
                   style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.w500,
                     color: Color.fromARGB(255, 47, 46, 65),
                   ),
                 ),
-                const SizedBox(
-                  width: 160,
-                )
               ],
             ),
             const SizedBox(
-              height: 30,
+              height: 20,
             ),
             const Text(
               'Set Expiry Time',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
             ),
             const SizedBox(
               height: 30,
@@ -82,7 +78,9 @@ class _ShareState extends State<Share> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: InputDecorator(
-                decoration: const InputDecoration(border: OutlineInputBorder()),
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                ),
                 child: DropdownButtonHideUnderline(
                   child: DropdownButton(
                       hint: Text(time),
@@ -111,7 +109,6 @@ class _ShareState extends State<Share> {
             ElevatedButton(
               onPressed: () async {
                 http.Response response = await getLink();
-
                 Map<String, dynamic> data = jsonDecode(response.body);
                 setState(() {
                   link = data['expirable_link'];
@@ -123,29 +120,45 @@ class _ShareState extends State<Share> {
               child: const Text("Get Link"),
             ),
             const SizedBox(
-              height: 30,
-            ),
-            Center(
-              child: InkWell(
-                child: Text(link),
-                onTap: () {
-                  // ignore: avoid_print
-                  FlutterClipboard.copy(link).then(
-                    // ignore: avoid_print
-                    (value) =>
-                        ScaffoldMessenger.of(context).showSnackBar(success),
-                  );
-                },
-              ),
-            ),
-            const SizedBox(
-              height: 30,
+              height: 10,
             ),
             link == ""
-                ? const Text('')
-                : QrImage(
-                    data: link,
-                    size: 300,
+                ? Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 30),
+                    child: Text(
+                      "Click on above button to get link for sharing your health wiht doctor",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w300,
+                        color: Color.fromARGB(255, 78, 76, 76),
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  )
+                : Column(
+                    children: [
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Center(
+                        child: InkWell(
+                          child: Text(link),
+                          onTap: () {
+                            FlutterClipboard.copy(link).then(
+                              (value) => ScaffoldMessenger.of(context)
+                                  .showSnackBar(success),
+                            );
+                          },
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      QrImage(
+                        data: link,
+                        size: 300,
+                      ),
+                    ],
                   )
           ],
         ),

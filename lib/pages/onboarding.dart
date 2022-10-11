@@ -76,7 +76,7 @@ class _OnboardingState extends State<Onboarding> {
                   duration: Duration(milliseconds: 500), curve: Curves.ease);
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.transparent,
+              primary: Colors.transparent,
               shape: CircleBorder(),
             ),
             child: Icon(
