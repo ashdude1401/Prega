@@ -50,3 +50,16 @@ Do check the [Contribution](https://github.com/Clueless-Community/Prega/blob/mas
 #### Take a moment to star ⭐ the project if you like it 😊
 
 Do checkout the other repos 💫
+---
+<h2 align='center'> Project maintainers </h2>
+<table align='center'>
+<tr>
+    <td align="center">
+        <a href="https://github.com/roshaen">
+            <img src="https://avatars.githubusercontent.com/u/58213083?v=4" width="100;" alt="Roshan Kumar"/>
+            <br />
+            <sub><b>Roshan Kumar</b></sub>
+        </a>
+    </td>
+  </tr>
+</table>
