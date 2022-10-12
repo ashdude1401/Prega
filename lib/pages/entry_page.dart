@@ -86,7 +86,7 @@ class _EntryPageState extends State<EntryPage> {
                 ),
               ],
               currentIndex: _selectedIndex,
-              selectedItemColor: const Color.fromARGB(255, 201, 201, 201),
+              selectedItemColor: Color.fromARGB(255, 128, 211, 199),
               onTap: _onItemTapped,
             ),
           );
